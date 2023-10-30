@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:simple/components/my_button.dart';
 import 'package:simple/components/my_textfield.dart';
+import 'package:simple/components/square_tile.dart';
+
+//sign user in method
+void signUserIn() {}
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -16,7 +21,7 @@ class LoginPage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                //logo
+                //space logo
                 const SizedBox(
                   height: 50,
                 ),
@@ -26,6 +31,7 @@ class LoginPage extends StatelessWidget {
                   size: 80,
                   color: Colors.black,
                 ),
+                //space hello
                 const SizedBox(
                   height: 50,
                 ),
@@ -37,6 +43,7 @@ class LoginPage extends StatelessWidget {
                     fontSize: 25,
                   ),
                 ),
+                //space welcome
                 const SizedBox(
                   height: 10,
                 ),
@@ -46,11 +53,12 @@ class LoginPage extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
+                //space email
                 const SizedBox(
                   height: 25,
                 ),
 
-                //email TextField baru
+                //email TextField
                 MyTextField(
                   controller: usernameController,
                   hintText: 'Usename',
@@ -68,7 +76,83 @@ class LoginPage extends StatelessWidget {
                   obscureText: true,
                 ),
 
-                //SingIn Button TextField
+                const SizedBox(
+                  height: 10,
+                ),
+                //Forgot Password
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Lupa Password?',
+                        style: TextStyle(
+                          color: Colors.grey.shade600,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                //SingIn Button
+                const MyButton(
+                  onTap: signUserIn,
+                ),
+                //space
+                const SizedBox(
+                  height: 50,
+                ),
+                //or continue with
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey.shade400,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text(
+                          'Or continue with',
+                          style: TextStyle(
+                            color: Colors.grey.shade400,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey.shade400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //space
+                const SizedBox(
+                  height: 60,
+                ),
+                //google an apple logo
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //google logo
+                    SquareTile(imagePath: 'lib/images/google.png'),
+                    //space
+                    SizedBox(
+                      width: 50,
+                    ),
+                    //apple logo
+                    SquareTile(imagePath: 'lib/images/apple.png'),
+                  ],
+                )
 
                 //SignUp
               ],
